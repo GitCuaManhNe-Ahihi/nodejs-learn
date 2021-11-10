@@ -1,0 +1,6 @@
+{
+    "presets":[
+        "@babel/preset-env"
+    ]
+}
+//setup babelirc npm @babel/core @babel/preset-env @babel/node
