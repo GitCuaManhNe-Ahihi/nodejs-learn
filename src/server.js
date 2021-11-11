@@ -2,6 +2,7 @@ import express from 'express'
 import configViewEngine from './config/viewsEngine'
 import path from 'path' // cấu hình path
 import initWebRouter from './route/web'
+//import connection from './config/connectDB'
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT  // CÀI NPM DOTENV
