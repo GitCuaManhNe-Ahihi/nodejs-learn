@@ -8,14 +8,39 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="topnav">
+        <a href="">Home</a>
+        <a href="">News</a>
+        <a href="">Contact</a>
+        <a href="">About</a>
+    </div>
     <h1>hello world from ejs</h1>
-    <ul>
-        <li>
-            
-            <%= datauser %>
-        </li>
-    </ul>
     <img src="/images/xinhne.jpg" alt="">
+    <h1>List user</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+        </thead>
+        <tbody>
+                <% for(let i=0;i < datauser.length;i++) {%>
+                    <tr>
+                        <th><%= datauser[i].Name %></th>
+                    <th><%= datauser[i].Email %></th>
+                    <th><a href='/info/<%= datauser[i].Id %>' target="_blank">detail </a> 
+                        <button>add </button> 
+                        <button>delete</button> </th>
+                    </tr>
+                    <% }%>
+           
+        </tbody>
+       
+      </table>
+   
+    
 </body>
 </html>
 <!--npm i ejs-->

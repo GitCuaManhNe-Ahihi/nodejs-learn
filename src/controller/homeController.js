@@ -11,7 +11,7 @@ let getHomepage = (req,res) =>{
       data =  result.map(item =>{
           return item
        })
-       return res.render('./index.ejs',{datauser:JSON.stringify(data)})
+       return res.render('./index.ejs',{datauser:data})
    }
   
  )
