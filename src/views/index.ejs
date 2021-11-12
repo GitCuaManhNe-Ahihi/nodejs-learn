@@ -18,14 +18,12 @@
     <img src="/images/xinhne.jpg" alt="">
     <h1>List user</h1>
     <table>
-        <thead>
+       
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Action</th>
               </tr>
-        </thead>
-        <tbody>
                 <% for(let i=0;i < datauser.length;i++) {%>
                     <tr>
                         <th><%= datauser[i].Name %></th>
@@ -36,7 +34,7 @@
                     </tr>
                     <% }%>
            
-        </tbody>
+
        
       </table>
    
