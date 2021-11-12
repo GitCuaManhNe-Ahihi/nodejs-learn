@@ -22,7 +22,18 @@ let getDetailPage  = async (req,res) => {
     return res.render("./info.ejs",{row})
 }
 
+let createNewUser  = async (req,res) => {
+    let {name,email,address} = req.body
+     await connection.execute('insert into `users`(Name,Email,Address) values (?,?,?)',[name,email,address])
+    return res.redirect('/')
+}
+let deleteUser  = async (req,res) => {
+    await connection.execute('DELETE FROM `users` WHERE `users`.`Id` = ?',[req.params.id])
+    return res.redirect('/')
+}
 module.exports ={
     getHomepage,
-    getDetailPage
+    getDetailPage,
+    createNewUser,
+    deleteUser
 }

@@ -6,7 +6,9 @@ import initWebRouter from './route/web'
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT  // CÀI NPM DOTENV
-require('dotenv').config();
+
+app.use(express.urlencoded({extends:true})) //config lây data từ phía client
+app.use(express.json())
 configViewEngine(app)
 //init router
 initWebRouter(app)
