@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href="">Home</a>
+        <a href="">News</a>
+        <a href="">Contact</a>
+        <a href="">About</a>
+    </div>
+    <img src="/images/xinhne.jpg" alt="">
+    <h1>List user</h1>
+    <table>
+       
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+                <% for(let i=0;i < datauser.length;i++) {%>
+                    <tr>
+                        <th><%= datauser[i].Name %></th>
+                    <th><%= datauser[i].Email %></th>
+                    <th><a href='/info/<%= datauser[i].Id %>' target="_blank">detail </a> 
+                        <button>Edit </button> 
+                        <a href='/delete/<%= datauser[i].Id %>' target="_self">Delete</a>
+                    </tr>
+                    <% }%>
+           
+
+       
+      </table>
+      <div class="createuserContainer">
+          <div>Create User</div>
+          <form action="/create-user" method="post" name='add'>
+              <label for="name"> Name
+              </label>
+              <input type="text" name='name'>
+              <br>
+              <label for="email" > Email
+            </label>
+            <input type="email" name='email'>
+            <br>
+            <label for="address"> Address
+            </label>
+            <input type="text" name='address'>
+            <input class="button" type="submit" value="submit">
+          </form>
+      </div>
+   
+    
+</body>
+</html>
+<!--npm i ejs-->
