@@ -8,6 +8,8 @@ const initWebRouter  = (app) => {
     router.get('/info/:id',homeController.getDetailPage)
     router.post('/create-user',homeController.createNewUser)
     router.get('/delete/:id',homeController.deleteUser)
+    router.get('/edit-user/:id',homeController.editUser)
+    router.post('/submit-edit/:id',homeController.submitEdit)
     return app.use('/',router)
 }
 

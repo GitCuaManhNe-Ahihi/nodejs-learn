@@ -79,6 +79,7 @@ table {
       background-color: rgb(0, 183, 255);
       margin: 0 5px;
       cursor: pointer;
+      color: black;
   }
   .createuserContainer{
       display: block;

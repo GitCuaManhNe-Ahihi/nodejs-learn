@@ -27,8 +27,8 @@
                     <tr>
                         <th><%= datauser[i].Name %></th>
                     <th><%= datauser[i].Email %></th>
-                    <th><a href='/info/<%= datauser[i].Id %>' target="_blank">detail </a> 
-                        <button>Edit </button> 
+                    <th><a href='/info/<%= datauser[i].Id %>'target="_self">detail </a> 
+                       <a href='/edit-user/<%= datauser[i].Id %>' target="_self">Edit </a> 
                         <a href='/delete/<%= datauser[i].Id %>' target="_self">Delete</a>
                     </tr>
                     <% }%>

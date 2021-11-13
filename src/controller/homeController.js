@@ -24,16 +24,27 @@ let getDetailPage  = async (req,res) => {
 
 let createNewUser  = async (req,res) => {
     let {name,email,address} = req.body
-     await connection.execute('insert into `users`(Name,Email,Address) values (?,?,?)',[name,email,address])
+    await connection.execute('insert into `users`(Name,Email,Address) values (?,?,?)',[name,email,address])
     return res.redirect('/')
 }
 let deleteUser  = async (req,res) => {
     await connection.execute('DELETE FROM `users` WHERE `users`.`Id` = ?',[req.params.id])
     return res.redirect('/')
 }
+let editUser  = async (req,res) => {
+    let [row,fiels] = await connection.execute('SELECT * FROM `users` WHERE Id = ?',[req.params.id])
+    return res.render('update.ejs',{row})
+}
+let submitEdit  = async (req,res) => {
+    let{name,email,address} = req.body
+    await connection.execute('UPDATE `users` SET Name =?,Email = ?,Address =? Where Id = ? ' ,[name,email,address,req.params.id])
+    return res.redirect('/')
+}
 module.exports ={
     getHomepage,
     getDetailPage,
     createNewUser,
-    deleteUser
+    deleteUser,
+    editUser,
+    submitEdit
 }
