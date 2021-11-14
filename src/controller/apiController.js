@@ -12,12 +12,14 @@ let getAlluser  = async (req,res) => {
 let createUser  = async (req,res) => {
 
     let {name,email,address} = req.body
-    if(!name || !email || !address)
+  
+    if(!name || !email || !address )
         return res.status(200).json({
             messege:'missing required'
         })
     else
    {
+    
     await connection.execute('insert into `users`(Name,Email,Address) values (?,?,?)',[name,email,address])
     return res.status(200).json({
         messege:'done'
