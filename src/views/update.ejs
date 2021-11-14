@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="createuserContainer">
+        <div>Create User</div>
+        <form action='/submit-edit/<%=row[0].Id %>' method="post" name='add'>
+            <label for="name"> Name
+            </label>
+            <input type="text" name='name' value='<%=row[0].Name %>'>
+            <br>
+            <label for="email" > Email
+          </label>
+          <input type="email" name='email' value='<%=row[0].Email %>'>
+          <br>
+          <label for="address"> Address
+          </label>
+          <input type="text" name='address' value='<%=row[0]. Address %>'>
+          <input class="button" type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>
